@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table</title>
+    <style>
+        button{
+            background-color: rgb(0, 200, 255);
+            cursor: pointer;
+            
+        }
+    </style>
+</head>
+<body>
+    <form action=""></form>
+        <input type="text" name="Add Task" id="task-input">
+        <button type="submit">Add Task</button>
+    </form>
+    <table border="">
+        <thead>
+            <th colspan="2" style= "text-align: center;">Task Manager</th>
+        </thead>
+        <thead>
+            <th>Se. No. </th>
+            <th>Tasks</th>
+        </thead>
+        <tr>
+            <td>  1</td>
+            <td>Workout</td>
+        </tr>
+    </table>
+    <script>
+        document.querySelector('form').addEventListener('submit',function(e){
+            e.preventDefault();
+            var Task = document.querySelector('#task-input').value;
+            var Tasks = document.querySelector('#Tasks');
+            var newTask = document.createElement('tr');
+            newTask.innerHTML = '<td>' + task +'</td>';
+            newTask.innerHTML += '<td><button>Delete</button></td>';
+            tasks.appendchild(newTask);
+        })
+    </script>
+</body>
+</html>
