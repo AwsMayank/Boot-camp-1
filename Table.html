@@ -3,43 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Table</title>
+    <title>Task Manager</title>
     <style>
-        button{
-            background-color: rgb(0, 200, 255);
-            cursor: pointer;
-            
+        form input{
+            padding: 14px 87px 10px 11px;
+            border-radius: 8px;
+            border: 3px solid #5e496e;
         }
+        button {
+           font-size: small;
+           background-color: transparent;
+           cursor: pointer;
+           padding: 14px 15px 10px 13px;
+           border-radius: 5px;
+           border: 3px solid rgb(0, 200, 0);
+}
+
+         button:hover {
+           background-color: rgb(0, 200, 0);
+           color: whitesmoke;}
+        table{
+            width: 24%;
+            font-size: larger;
+  }
+           
+ 
+
     </style>
 </head>
 <body>
-    <form action=""></form>
-        <input type="text" name="Add Task" id="task-input">
+    <form id="task-form">
+        <input type="text" name="task" id="task-input" placeholder="Add Task">
         <button type="submit">Add Task</button>
     </form>
-    <table border="">
+    
+    <table border="1">
         <thead>
-            <th colspan="2" style= "text-align: center;">Task Manager</th>
+            <tr>
+                <th colspan="2" style="text-align: center;">Task Manager</th>
+            </tr>
+            <tr>
+                <th>Se. No.</th>
+                <th>Tasks</th>
+            </tr>
         </thead>
-        <thead>
-            <th>Se. No. </th>
-            <th>Tasks</th>
-        </thead>
-        <tr>
-            <td>  1</td>
-            <td>Workout</td>
-        </tr>
+        <tbody id="tasks">
+            <tr>
+                <td>1</td>
+                <td>Workout</td>
+            </tr>
+        </tbody>
     </table>
+
     <script>
-        document.querySelector('form').addEventListener('submit',function(e){
+        document.querySelector('#task-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            var Task = document.querySelector('#task-input').value;
-            var Tasks = document.querySelector('#Tasks');
-            var newTask = document.createElement('tr');
-            newTask.innerHTML = '<td>' + task +'</td>';
-            newTask.innerHTML += '<td><button>Delete</button></td>';
-            tasks.appendchild(newTask);
-        })
+            var task = document.querySelector('#task-input').value;
+            var tasks = document.querySelector('#tasks');
+            var rowCount = tasks.rows.length + 1;
+            var newTaskRow = document.createElement('tr');
+            newTaskRow.innerHTML = '<td>' + rowCount + '</td><td>' + task + '</td>';
+            tasks.appendChild(newTaskRow);
+            document.querySelector('#task-input').value = '';
+        });
     </script>
 </body>
 </html>
