@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Manager</title>
     <style>
-        form input{
+        form input {
             padding: 14px 87px 10px 11px;
             border-radius: 8px;
             border: 3px solid #5e496e;
@@ -17,19 +17,16 @@
            padding: 14px 15px 10px 13px;
            border-radius: 5px;
            border: 3px solid rgb(0, 200, 0);
-}
-
-         button:hover {
+        }
+        button:hover {
            background-color: rgb(0, 200, 0);
-           color: whitesmoke;}
-        table{
+           color: whitesmoke;
+        }
+        table {
             margin-top: 10px;
             width: 24%;
             font-size: larger;
-  }
-           
- 
-
+        }
     </style>
 </head>
 <body>
@@ -44,13 +41,13 @@
                 <th colspan="2" style="text-align: center;">Task Manager</th>
             </tr>
             <tr>
-                <th>Se. No.</th>
+                <th>Completed</th>
                 <th>Tasks</th>
             </tr>
         </thead>
         <tbody id="tasks">
             <tr>
-                <td>1</td>
+                <td><input type="checkbox"></td>
                 <td>Workout</td>
             </tr>
         </tbody>
@@ -61,9 +58,8 @@
             e.preventDefault();
             var task = document.querySelector('#task-input').value;
             var tasks = document.querySelector('#tasks');
-            var rowCount = tasks.rows.length + 1;
             var newTaskRow = document.createElement('tr');
-            newTaskRow.innerHTML = '<td>' + rowCount + '</td><td>' + task + '</td>';
+            newTaskRow.innerHTML = '<td><input type="checkbox"></td><td>' + task + '</td>';
             tasks.appendChild(newTaskRow);
             document.querySelector('#task-input').value = '';
         });
